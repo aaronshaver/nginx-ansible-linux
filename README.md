@@ -21,7 +21,7 @@ Automates configuration and installation of nginx onto a Linux client
 5. Install Ansible on the child node: `sudo apt-get install ansible`
 
 6. Ensure your nodes are accessible by Ansible: `ansible -m ping all`. If this fails, some things to check are:
-  6a. Make sure your child node is open to ping traffic, e.g. on AWS EC2, add "All ICMP - IPv4" to the inbound rule of an attached security group
-  6b. Make sure you can SSH manually into the child node without Ansible 
-  6c. Run the command with `-vvvv` and manually execute the command Ansible is executing (e.g. it'll show the full log of SSH attempts)
+    6a. Make sure your child node is open to ping traffic, e.g. on AWS EC2, add "All ICMP - IPv4" to the inbound rule of an attached security group
+    6b. Make sure you can SSH manually into the child node without Ansible 
+    6c. Run the command with `-vvvv` and manually execute the command Ansible is executing (e.g. it'll show the full log of SSH attempts)
 
