@@ -2,7 +2,9 @@
 
 ## Description
 
-Automates configuration and installation of nginx onto a Linux client
+Automate the configuration and installation of Nginx on a Linux system, ideally RedHat, CentOS, or Fedora.
+
+* Nginx should listen on port 8888.
 
 ## Usage
 
@@ -25,5 +27,9 @@ Automates configuration and installation of nginx onto a Linux client
 6. Ensure your nodes are accessible by Ansible: `ansible -m ping all`. If this fails, some things to check are:
     1. Make sure your child node is open to ping traffic, e.g. on AWS EC2, add "All ICMP - IPv4" to the inbound rule of an attached security group
     2. Make sure you can SSH manually into the child node without Ansible 
-    3. Run the command with `-vvvv` and manually execute the command Ansible is executing (e.g. it'll show the full log of SSH attempts)
+    3. Run the command with `-vvv` and manually execute the command Ansible is executing (e.g. it'll show the full log of SSH attempts)
+
+7. Run the playbook on the master node: `sudo ansible-playbook deploy.yml` (assumes you're in the project directory that has deploy.yml)
+
+8. Verify nginx is running with `curl -Is 52.91.71.123 | grep HTTP`. This should return: `HTTP/1.1 200 OK`
 
