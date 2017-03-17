@@ -13,9 +13,11 @@ Automates configuration and installation of nginx onto a Linux client
 
 3. Specify which child nodes you wish to deploy nginx to by editing the Ansible hosts file (`sudo vim /etc/ansible/hosts`) in your master node. Include lines similar to:
 
+```
     [nginx]
     web1 ansible_ssh_host=52.91.71.123 ansible_ssh_user=ubuntu
-
+```
+    
 4. Ensure the child nodes have the master node's public SSH key: on the child node, edit `~/.ssh/authorized_keys` to append your master node public keys. You can also use the ssh-copy-id command, though it may need to be installed.
 
 5. Install Ansible on the child node: `sudo apt-get install ansible`
