@@ -31,6 +31,6 @@ Automate the configuration and installation of Nginx on a Linux system, ideally 
 
 7. Run the playbook on the master node: `sudo ansible-playbook deploy.yml` (assumes you're in the project directory that has deploy.yml)
 
-8. Verify nginx is running with `curl -Is 52.91.71.123 | grep HTTP`. This should return: `HTTP/1.1 200 OK` (alternatively, you could go to the IP in a browser, where you'll see the 'Welcome to nginx!' page)
+8. Verify nginx is running with `curl -Is 52.91.71.123:8888 | grep HTTP`. This should return: `HTTP/1.1 200 OK` (alternatively, you could go to the IP in a browser, where you'll see the 'Welcome to nginx!' page)
 
 9. If you have trouble with nginx or need to change key settings, this command (performed on the child node) to restart the server can help: `sudo /etc/init.d/nginx restart`
