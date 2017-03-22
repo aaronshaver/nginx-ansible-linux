@@ -7,7 +7,7 @@ Automates the configuration and installation of nginx on an Ubuntu Linux target 
 ## Usage
 
 1. Install Ansible on the master node:
-    * Ubuntu: `sudo apt-get install ansible`
+   * Ubuntu: `sudo apt-get install ansible`
 
 2. Test the installation with `ansible --version`; should return something like `ansible 2.1.1.0` and some config info
 
@@ -22,7 +22,7 @@ Automates the configuration and installation of nginx on an Ubuntu Linux target 
 
 5. Install Ansible on the child node: `sudo apt-get install ansible`
 
-6. Ensure your nodes are accessible by Ansible: `ansible -m ping all`. If this fails, some things to check are:
+6. Ensure your nodes are accessible by Ansible: `ansible -m ping nginx`. If this fails, some things to check are:
     1. Make sure your child node is open to ping traffic, e.g. on AWS EC2, add "All ICMP - IPv4" to the inbound rule of an attached security group. While you're at it, add a Custom TCP Rule (assuming AWS) for port 8888.
     2. Make sure you can SSH manually into the child node without Ansible 
     3. Run the command with `-vvv` and manually execute the command Ansible is executing (e.g. it'll show the full log of SSH attempts)
