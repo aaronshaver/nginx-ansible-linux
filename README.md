@@ -2,9 +2,7 @@
 
 ## Description
 
-Automate the configuration and installation of Nginx on a Linux system, ideally RedHat, CentOS, or Fedora.
-
-* Nginx should listen on port 8888.
+Automates the configuration and installation of nginx on an Ubuntu Linux target server, listens on custom port 8888.
 
 ## Usage
 
